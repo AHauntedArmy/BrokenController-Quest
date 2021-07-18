@@ -1,9 +1,5 @@
-# #{name}
+# BrokenController
 
-#{description}
+gorilla tag quest mod, if you havea 1 controller disconnected pressumably because its broken, the hand associated with the missing controller will track the connected controller.
 
-## Credits
-
-* [zoller27osu](https://github.com/zoller27osu), [Sc2ad](https://github.com/Sc2ad) and [jakibaki](https://github.com/jakibaki) - [beatsaber-hook](https://github.com/sc2ad/beatsaber-hook)
-* [raftario](https://github.com/raftario) 
-* [Lauriethefish](https://github.com/Lauriethefish) and [danrouse](https://github.com/danrouse) for [this template](https://github.com/Lauriethefish/quest-mod-template)
+i made this purely because PigGamer1468 has a broken controller.
