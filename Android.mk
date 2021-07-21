@@ -54,7 +54,7 @@ LOCAL_SHARED_LIBRARIES += beatsaber-hook_2_0_3
 LOCAL_SHARED_LIBRARIES += monkecodegen
 LOCAL_SHARED_LIBRARIES += custom-types
 LOCAL_LDLIBS += -llog
-LOCAL_CFLAGS += -I'extern/libil2cpp/il2cpp/libil2cpp' -DID='"BrokenController"' -DVERSION='"1.0.0"' -I'./shared' -I'./extern' -isystem'extern/monkecodegen/include'
+LOCAL_CFLAGS += -I'extern/libil2cpp/il2cpp/libil2cpp' -DID='"BrokenController"' -DVERSION='"1.0.1"' -I'./shared' -I'./extern' -isystem'extern/monkecodegen/include'
 LOCAL_CPPFLAGS += -std=c++2a
 LOCAL_C_INCLUDES += ./include ./src
 include $(BUILD_SHARED_LIBRARY)

@@ -6,8 +6,8 @@ if (-not ($PSVersionTable.PSEdition -eq "Core")) {
     $buildScript += ".cmd"
 }
 
-$ArchiveName = "BrokenController_v1.0.0.qmod"
-$TempArchiveName = "BrokenController_v1.0.0.qmod.zip"
+$ArchiveName = "BrokenController_v1.0.1.qmod"
+$TempArchiveName = "BrokenController_v1.0.1.qmod.zip"
 
 & $buildScript NDK_PROJECT_PATH=$PSScriptRoot APP_BUILD_SCRIPT=$PSScriptRoot/Android.mk NDK_APPLICATION_MK=$PSScriptRoot/Application.mk -j 8
 Compress-Archive -Path "./libs/arm64-v8a/libBrokenController.so", 
