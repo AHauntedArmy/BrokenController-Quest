@@ -48,4 +48,5 @@ extern/
 Android.mk.backup
 qpm.shared.json
 
+[Ll]ogs/
 *.qmod

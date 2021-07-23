@@ -63,6 +63,8 @@ void ControllerManager::AddVRRig(GlobalNamespace::VRRig* rig)
             onlineLeftHand = rig->leftHand;
         }
     }
+
+    UpdateControllers();
 }
 
 void ControllerManager::RemoveVRRig(GlobalNamespace::VRRig* rig)
@@ -82,6 +84,8 @@ void ControllerManager::RemoveVRRig(GlobalNamespace::VRRig* rig)
             onlineLeftHand = nullptr;
         }
     }
+
+    UpdateControllers();
 }
 
 void ControllerManager::DeviceConnected()

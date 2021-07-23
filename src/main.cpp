@@ -40,12 +40,14 @@ MAKE_HOOK_MATCH(PlayerAwake, &GorillaLocomotion::Player::Awake, void, GorillaLoc
 MAKE_HOOK_MATCH(VRRigSpawned, &GlobalNamespace::VRRig::Start, void, GlobalNamespace::VRRig* self)
 {
     VRRigSpawned(self);
+    controllerManager.AddVRRig(self);
 }
 
 //VRRig.OnDestroy()
 MAKE_HOOK_MATCH(VRRigDespawned, &GlobalNamespace::VRRig::OnDestroy, void, GlobalNamespace::VRRig* self)
 {
     VRRigDespawned(self);
+    controllerManager.RemoveVRRig(self);
 }
 
 // Loads the config from disk using our modInfo, then returns it for use
