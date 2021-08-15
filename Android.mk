@@ -18,30 +18,24 @@ TARGET_ARCH_ABI := $(APP_ABI)
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-# Creating prebuilt for dependency: modloader - version: 1.1.0
+# Creating prebuilt for dependency: modloader - version: 1.2.3
 include $(CLEAR_VARS)
 LOCAL_MODULE := modloader
 LOCAL_EXPORT_C_INCLUDES := extern/modloader
 LOCAL_SRC_FILES := extern/libmodloader.so
 include $(PREBUILT_SHARED_LIBRARY)
-# Creating prebuilt for dependency: beatsaber-hook - version: 2.0.3
+# Creating prebuilt for dependency: beatsaber-hook - version: 2.2.5
 include $(CLEAR_VARS)
-LOCAL_MODULE := beatsaber-hook_2_0_3
+LOCAL_MODULE := beatsaber-hook_2_2_5
 LOCAL_EXPORT_C_INCLUDES := extern/beatsaber-hook
-LOCAL_SRC_FILES := extern/libbeatsaber-hook_2_0_3.so
+LOCAL_SRC_FILES := extern/libbeatsaber-hook_2_2_5.so
 LOCAL_CPP_FEATURES += exceptions
 include $(PREBUILT_SHARED_LIBRARY)
-# Creating prebuilt for dependency: monkecodegen - version: 0.7.4
+# Creating prebuilt for dependency: monkecodegen - version: 0.8.0
 include $(CLEAR_VARS)
 LOCAL_MODULE := monkecodegen
 LOCAL_EXPORT_C_INCLUDES := extern/monkecodegen
 LOCAL_SRC_FILES := extern/libmonkecodegen.so
-include $(PREBUILT_SHARED_LIBRARY)
-# Creating prebuilt for dependency: custom-types - version: 0.12.4
-include $(CLEAR_VARS)
-LOCAL_MODULE := custom-types
-LOCAL_EXPORT_C_INCLUDES := extern/custom-types
-LOCAL_SRC_FILES := extern/libcustom-types.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -50,11 +44,10 @@ LOCAL_SRC_FILES += $(call rwildcard,src/,*.cpp)
 LOCAL_SRC_FILES += $(call rwildcard,extern/beatsaber-hook/src/inline-hook,*.cpp)
 LOCAL_SRC_FILES += $(call rwildcard,extern/beatsaber-hook/src/inline-hook,*.c)
 LOCAL_SHARED_LIBRARIES += modloader
-LOCAL_SHARED_LIBRARIES += beatsaber-hook_2_0_3
+LOCAL_SHARED_LIBRARIES += beatsaber-hook_2_2_5
 LOCAL_SHARED_LIBRARIES += monkecodegen
-LOCAL_SHARED_LIBRARIES += custom-types
 LOCAL_LDLIBS += -llog
-LOCAL_CFLAGS += -I'extern/libil2cpp/il2cpp/libil2cpp' -DID='"BrokenController"' -DVERSION='"1.0.1"' -I'./shared' -I'./extern' -isystem'extern/monkecodegen/include'
+LOCAL_CFLAGS += -I'extern/libil2cpp/il2cpp/libil2cpp' -DID='"BrokenController"' -DVERSION='"1.0.2"' -I'./shared' -I'./extern' -isystem'extern/monkecodegen/include'
 LOCAL_CPPFLAGS += -std=c++2a
 LOCAL_C_INCLUDES += ./include ./src
 include $(BUILD_SHARED_LIBRARY)

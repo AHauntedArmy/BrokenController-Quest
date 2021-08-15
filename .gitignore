@@ -50,3 +50,5 @@ qpm.shared.json
 
 [Ll]ogs/
 *.qmod
+restart-game.ps1
+start-logging.ps1
