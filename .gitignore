@@ -49,6 +49,7 @@ Android.mk.backup
 qpm.shared.json
 
 [Ll]ogs/
+[Bb]uild/
 *.qmod
 restart-game.ps1
 start-logging.ps1
