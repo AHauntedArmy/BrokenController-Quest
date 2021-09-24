@@ -1,25 +1,31 @@
 {
-  "configurations": [
-    {
-      "defines": [
-        "ID=\"BrokenController\"",
-        "VERSION=\"1.0.2\"",
-        "__GNUC__",
-        "__aarch64__"
-      ],
-      "includePath": [
-        "${workspaceFolder}/**",
-        "${workspaceFolder}/shared",
-        "${workspaceFolder}/include",
-        "${workspaceFolder}/extern/**",
-        "${workspaceFolder}/extern/libil2cpp/il2cpp/libil2cpp",
-        "C:/Microsoft/AndroidNDK64/android-ndk-r23/**"
-      ],
-      "name": "Quest",
-      "cStandard": "c11",
-      "cppStandard": "c++20",
-      "intelliSenseMode": "clang-x64"
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "defines": [
+                "ID=\"BrokenController\"",
+                "VERSION=\"1.0.3\"",
+                "__GNUC__",
+                "__aarch64__",
+                "__clang__"
+            ],
+            "includePath": [
+                "/mnt/c/Microsoft/Linux/android-ndk-r23/**",
+                "/mnt/c/Microsoft/Linux/android-ndk-r23/sources/cxx-stl/llvm-libc++/include/**",
+                "/mnt/c/Microsoft/Linux/android-ndk-r23/sources/cxx-stl/llvm-libc++abi/include/**",
+                "/mnt/c/Microsoft/Linux/android-ndk-r23/sources/cxx-stl/system/include/**",
+                "/mnt/c/Microsoft/Linux/android-ndk-r23/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/**",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/shared",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/extern/**",
+                "${workspaceFolder}/extern/libil2cpp/il2cpp/libil2cpp"
+            ],
+            "name": "Quest",
+            "cStandard": "c11",
+            "compilerPath": "/mnt/c/Microsoft/Linux/android-ndk-r23/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-12",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
 }

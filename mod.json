@@ -4,22 +4,22 @@
     "name": "BrokenController-Quest",
     "id": "BrokenController",
     "author": "AHauntedArmy",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "packageId": "com.AnotherAxiom.GorillaTag",
-    "packageVersion": "1.0.11",
+    "packageVersion": "1.1.0",
     "coverImage": "monkeyhammer.jpg",
-    "description": "if one controller is disconnnected, both hands tracks the connected controller",
+    "description": "makes the game playable on one controller",
     "modFiles": [
         "libBrokenController.so"
     ],
     "libraryFiles": [
-        "libbeatsaber-hook_2_2_5.so"
+        "libbeatsaber-hook_2_3_2.so"
     ],
     "dependencies": [
         {
             "id": "monkecodegen",
-            "version": ">=0.8.0",
-            "downloadIfMissing": "https://github.com/RedBrumbler/MonkeCodegen/releases/download/v0.8.0/MonkeCodegen.qmod"
+            "version": ">=0.9.0",
+            "downloadIfMissing": "https://github.com/RedBrumbler/MonkeCodegen/releases/download/v0.9.0/MonkeCodegen.qmod"
         }
     ]
 }

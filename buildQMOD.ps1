@@ -6,12 +6,13 @@ if (-not ($PSVersionTable.PSEdition -eq "Core")) {
     $buildScript += ".cmd"
 }
 
-$ArchiveName = "BrokenController_v1.0.2.qmod"
+$ArchiveName = "BrokenController_v1.0.4.qmod"
 $TempArchiveName = "BrokenController_v1.0.2.qmod.zip"
 
 & $buildScript NDK_PROJECT_PATH=$PSScriptRoot APP_BUILD_SCRIPT=$PSScriptRoot/Android.mk NDK_APPLICATION_MK=$PSScriptRoot/Application.mk -j 8
+
 Compress-Archive -Path "./libs/arm64-v8a/libBrokenController.so", 
-                       "./libs/arm64-v8a/libbeatsaber-hook_2_2_5.so", 
+                       "./libs/arm64-v8a/libbeatsaber-hook_2_3_2.so", 
                        "./mod.json",
                        "./monkeyhammer.jpg" -DestinationPath $TempArchiveName -Force
 Move-Item $TempArchiveName $ArchiveName -Force

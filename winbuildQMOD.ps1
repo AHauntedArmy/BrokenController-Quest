@@ -1,0 +1,1 @@
+powershell.exe ./buildQMOD.ps1

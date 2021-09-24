@@ -27,6 +27,7 @@ MAKE_HOOK_MATCH(DeviceConnectEvent, &UnityEngine::XR::InputDevices::InvokeConnec
             break;
         }
     }
+
 }
 
 //GorillaLocomotion Player.Awake()

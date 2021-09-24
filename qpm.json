@@ -20,7 +20,7 @@
     },
     {
       "id": "monkecodegen",
-      "versionRange": "^0.8.0",
+      "versionRange": ">=0.8.0",
       "additionalData": {}
     }
   ],
