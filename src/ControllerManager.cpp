@@ -5,6 +5,7 @@
 
 #include "Photon/Pun/PhotonView.hpp"
 
+#include "logg.hpp"
 #include "ControllerManager.hpp"
     
 using namespace UnityEngine;
@@ -42,6 +43,8 @@ void ControllerManager::AddPlayer(GorillaLocomotion::Player* player)
 
     loaded = true;
 
+    getLogger().info("setup XRController component references");
+
     UpdateControllers();
 }
 
@@ -49,16 +52,19 @@ void ControllerManager::AddVRRig(GlobalNamespace::VRRig* rig)
 {
     if(rig == nullptr) return;
 
+    Logger& logger = getLogger();
     Photon::Pun::PhotonView* rigPhoton = rig->get_photonView();
 
     if(rigPhoton == nullptr){
         if(rig->isOfflineVRRig){
+            logger.info("adding offline vr rig mapping");
             rightHand = rig->rightHand;
             leftHand = rig->leftHand;
         }
     }else{
         if(rigPhoton->IsMine)
         {
+            logger.info("adding online vr rig mapaping");
             onlineRightHand = rig->rightHand;
             onlineLeftHand = rig->leftHand;
         }
@@ -72,14 +78,18 @@ void ControllerManager::RemoveVRRig(GlobalNamespace::VRRig* rig)
     if(rig == nullptr) return;
 
     Photon::Pun::PhotonView* rigPhoton = rig->get_photonView();
+    Logger& logger = getLogger();
 
     if(rigPhoton == nullptr){
         if(rig->isOfflineVRRig){
+            logger.info("removing offline vr rig mapping");
             rightHand = nullptr;
             leftHand = nullptr;
         }
+
     }else{
         if(rigPhoton->IsMine){
+            logger.info("removing online vr rig mapping");
             onlineRightHand = nullptr;
             onlineLeftHand = nullptr;
         }
@@ -100,8 +110,12 @@ void ControllerManager::UpdateControllers()
 {
     if(!loaded) return;
 
+    Logger& logger = getLogger();
+
     // if both controllers are connected or disconnected, set everything to default
     if(rightValid == leftVaild){
+        logger.info("both controllres are connected");
+
         if(onlineRightHand != nullptr) onlineRightHand->vrTargetNode = XRNode::RightHand;
         if(onlineLeftHand != nullptr) onlineLeftHand->vrTargetNode = XRNode::LeftHand;
         if(rightHand != nullptr) rightHand->vrTargetNode = XRNode::RightHand;
@@ -116,6 +130,8 @@ void ControllerManager::UpdateControllers()
     }
 
     if(rightValid){
+        logger.info("left controller is disconnected");
+
         if(onlineLeftHand != nullptr) onlineLeftHand->vrTargetNode = XRNode::RightHand;
         if(leftHand != nullptr) leftHand->vrTargetNode = XRNode::RightHand;
         leftController->set_controllerNode(XRNode::RightHand);
@@ -123,6 +139,8 @@ void ControllerManager::UpdateControllers()
     }
 
     if(leftVaild){
+        logger.info("right controler is disconnected");
+
         if(onlineRightHand != nullptr) onlineRightHand->vrTargetNode = XRNode::LeftHand;
         if(rightHand != nullptr) rightHand->vrTargetNode = XRNode::LeftHand;
         rightController->set_controllerNode(XRNode::LeftHand);

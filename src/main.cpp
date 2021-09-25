@@ -1,4 +1,5 @@
 #include "main.hpp"
+#include "logg.hpp"
 
 // for device connect hooks
 #include "UnityEngine/XR/InputDevices.hpp"
@@ -23,6 +24,7 @@ MAKE_HOOK_MATCH(DeviceConnectEvent, &UnityEngine::XR::InputDevices::InvokeConnec
     switch(change.value){
         case ChangeType::Disconnected : 
         case ChangeType::Connected : {
+            getLogger().info("device connection event");
             controllerManager.DeviceConnected();
             break;
         }
